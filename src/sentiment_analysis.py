@@ -3,7 +3,7 @@ from transformers import pipeline
 from textblob import TextBlob
 import os
 
-# Load pre-trained model
+# Load pre-trained models
 sentiment_analyzer_distilbert = pipeline(
     "sentiment-analysis",
     model="distilbert-base-uncased-finetuned-sst-2-english",
@@ -44,3 +44,4 @@ df.to_csv(os.path.join(output_dir, 'sentiment_results.csv'), index=False)
 sentiment_summary_distilbert.to_csv(os.path.join(output_dir, 'sentiment_summary_distilbert.csv'), index=False)
 sentiment_summary_textblob.to_csv(os.path.join(output_dir, 'sentiment_summary_textblob.csv'), index=False)
 print(f"Saved sentiment results to {os.path.join(output_dir, 'sentiment_results.csv')}")
+print(f"Processed {len(df)} reviews, covering {len(df) / 1200 * 100:.1f}% of target data")

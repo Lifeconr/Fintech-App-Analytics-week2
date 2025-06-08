@@ -25,7 +25,10 @@ vectorizer = TfidfVectorizer(max_features=50, ngram_range=(1, 2))
 tfidf_matrix = vectorizer.fit_transform(df['processed_review'])
 keywords = vectorizer.get_feature_names_out()
 
-# Define theme mapping based on keywords
+# Theme mapping with documented logic
+# Grouping logic: Themes are defined based on recurring keywords identified via TF-IDF.
+# Each theme corresponds to a category of user feedback, with keywords manually mapped
+# to reflect common issues or praises in banking app reviews.
 theme_mapping = {
     'ui_experience': ['ui', 'interface', 'design', 'layout', 'experience'],
     'transaction_performance': ['slow', 'crash', 'loading', 'transfer', 'performance'],
