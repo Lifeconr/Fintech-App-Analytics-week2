@@ -1,3 +1,9 @@
 google-play-scraper==1.2.5
 pandas==2.2.2
 numpy==1.26.4
+transformers==4.42.3
+torch==2.3.0
+spacy==3.7.5
+scikit-learn==1.5.0
+textblob
+nltk
